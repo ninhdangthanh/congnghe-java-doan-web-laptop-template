@@ -245,6 +245,10 @@
     margin: 14px 0;
 }
 
+.btn-danger-carting {
+    width: 100%;
+}
+
 .body_product_mid_danger_text {
     color: red;
     font-size: 18px;
@@ -281,6 +285,7 @@
 .product_right_insurance {
     border: 1px solid #ccc;
     padding: 4px;
+    padding-top: 8px;
     border-radius: 4px;
     margin-bottom: 30px;
 }
