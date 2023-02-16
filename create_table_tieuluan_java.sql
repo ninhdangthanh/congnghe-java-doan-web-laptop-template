@@ -3,7 +3,6 @@ create table `trademark`(
 	`id` int not null AUTO_INCREMENT primary key,
     `trademark_name` nvarchar(100) not null,
 )
-
 -- 1 Dell
 -- 2 Asus
 -- 3 Acer
