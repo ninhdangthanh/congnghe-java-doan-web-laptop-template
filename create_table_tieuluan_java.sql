@@ -27,3 +27,12 @@ create table `laptop`(
     trademark_id int not null,
     foreign key (trademark_id) references trademark(id)
 )
+
+use `tieuluan_java`;
+create table `user`(
+	`id` int not null AUTO_INCREMENT primary key,
+    `email` unique nvarchar(100) not null,
+    `password` nvarchar(100) not null,
+    `role` nvarchar(100) not null, --admin, manager
+)
+insert into user(email, password, role) values ("admin", "admin", "admin")

@@ -240,3 +240,7 @@ th, td {
     height: 200px;
     background-size: contain;
 }
+
+.right_list_form {
+    width: 50%;
+}

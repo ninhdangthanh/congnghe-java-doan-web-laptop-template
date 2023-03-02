@@ -47,8 +47,7 @@
                                 <tr>
                                     <th>Thương hiệu</th>
                                     <td>
-                                        <select name="trademark_name" id="trademark_name" class="form-select"
-                                            aria-label="Default select example">
+                                        <select name="trademark_name" id="trademark_name" class="form-select">
                                             <option value="Dell">Dell</option>
                                             <option value="Acer">Acer</option>
                                             <option value="Asus">Asus</option>
@@ -58,8 +57,7 @@
                                 <tr>
                                     <th>Series</th>
                                     <td>
-                                        <select name="series" id="series" class="form-select"
-                                            aria-label="Default select example">
+                                        <select name="series" id="series" class="form-select">
                                             <option value="Latitude">Latitude</option>
                                             <option value="Inspiron">Inspiron</option>
                                             <option value="Vostro">Vostro</option>
@@ -130,9 +128,90 @@
                         </div>
                     </div>
                 </form>
+                <form action="${pageContext.request.contextPath}/admin_dashboard_add" method="post">
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Thương hiệu</strong></label>
+                        <select name="trademark_name" value="Acer" id="trademark_name" class="form-select">
+                            <option value="Dell">Dell</option>
+                            <option value="Acer">Acer</option>
+                            <option value="Asus">Asus</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Series</strong></label>
+                        <select name="series" id="series" class="form-select">
+                            <option value="Latitude">Latitude</option>
+                            <option value="Inspiron">Inspiron</option>
+                            <option value="Vostro">Vostro</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Tên máy</strong></label>
+                        <input required="" type="text" placeholder="Nhập tên máy (text)" class="form-control"
+                            name="name" id="name">
+
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Giá</strong></label>
+                        <input required="" type="number" placeholder="Nhập Giá (number)" class="form-control"
+                            name="price" id="price">
+
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Giá cũ</strong></label>
+                        <input required="" type="number" placeholder="Nhập Giá cũ (number)" class="form-control"
+                            name="past_price" id="past_price">
+
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>CPU</strong></label>
+                        <input required="" type="text" placeholder="Chọn CPU (text)" class="form-control" name="cpu"
+                            id="cpu">
+
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Ram</strong></label>
+                        <input required="" type="text" placeholder="Chọn Ram (text)" class="form-control"
+                            name="ram_compact" id="ram_compact">
+
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Memory</strong></label>
+                        <input required="" type="text" placeholder="Chọn Memory (text)" class="form-control"
+                            name="memory_compact" id="memory_compact">
+
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Screen</strong></label>
+                        <input required="" type="text" placeholder="Chọn Screen (text)" class="form-control"
+                            name="screen_compact" id="screen_compact">
+
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Link Image</strong></label>
+                        <input required="" type="text" placeholder="Nhập Link image (text)" class="form-control"
+                            name="link_img" id="link_img">
+
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-form-login-submit">Thêm</button>
+                </form>
             </div>
         </div>
     </div>
 </body>
 
 </html>
+
+<script>
+    document.getElementById('trademark_name').onchange = function () {
+        var selectedValue = document.getElementById("trademark_name").value;
+        if (selectedValue == "Dell") {
+            document.getElementById("series").innerHTML = "<option value='Latitude'>Latitude</option><option value='Inspiron'>Inspiron</option><option value='Vostro'>Vostro</option>"
+        } else if (selectedValue == "Acer") {
+            document.getElementById("series").innerHTML = "<option value='Aspire'>Aspire</option><option value='Nitro'>Nitro</option><option value='Swift'>Swift</option>"
+        } else {
+            document.getElementById("series").innerHTML = "<option value='Zenbook'>Zenbook</option><option value='VivoBook'>VivoBook</option><option value='ROG'>ROG</option>"
+        }
+
+    }
+</script>
